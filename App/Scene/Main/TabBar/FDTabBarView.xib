@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tX9-Xy-hKm" customClass="FDTabBarView" customModule="App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U55-DY-sbZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlZ-Jd-LFA" customClass="UIControl">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_main_store" translatesAutoresizingMaskIntoConstraints="NO" id="314-Ax-c6A">
+                                    <rect key="frame" x="0.0" y="10" width="75" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="314-Ax-c6A" firstAttribute="leading" secondItem="FlZ-Jd-LFA" secondAttribute="leading" id="Fx8-Rm-d08"/>
+                                <constraint firstAttribute="trailing" secondItem="314-Ax-c6A" secondAttribute="trailing" id="HVe-wq-U3J"/>
+                                <constraint firstItem="314-Ax-c6A" firstAttribute="centerX" secondItem="FlZ-Jd-LFA" secondAttribute="centerX" id="LNM-CP-to2"/>
+                                <constraint firstItem="314-Ax-c6A" firstAttribute="top" secondItem="FlZ-Jd-LFA" secondAttribute="top" constant="10" id="a7H-sf-oEi"/>
+                                <constraint firstAttribute="bottom" secondItem="314-Ax-c6A" secondAttribute="bottom" constant="10" id="xgi-EI-fgC"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnActionsWithSender:" destination="tX9-Xy-hKm" eventType="touchUpInside" id="ksf-cx-FfN"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-dk-14G" customClass="UIControl">
+                            <rect key="frame" x="75" y="0.0" width="75" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_main_staff" translatesAutoresizingMaskIntoConstraints="NO" id="6zl-xL-RaA">
+                                    <rect key="frame" x="0.0" y="10" width="75" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="6zl-xL-RaA" secondAttribute="bottom" constant="10" id="39O-hh-1sq"/>
+                                <constraint firstItem="6zl-xL-RaA" firstAttribute="centerX" secondItem="EgL-dk-14G" secondAttribute="centerX" id="6Am-wQ-HKm"/>
+                                <constraint firstItem="6zl-xL-RaA" firstAttribute="leading" secondItem="EgL-dk-14G" secondAttribute="leading" id="eEZ-oe-eDZ"/>
+                                <constraint firstItem="6zl-xL-RaA" firstAttribute="top" secondItem="EgL-dk-14G" secondAttribute="top" constant="10" id="eWC-5Y-2Ic"/>
+                                <constraint firstAttribute="trailing" secondItem="6zl-xL-RaA" secondAttribute="trailing" id="r6U-6k-GmE"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnActionsWithSender:" destination="tX9-Xy-hKm" eventType="touchUpInside" id="fwz-dx-NF4"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQz-Rp-s2p" customClass="UIControl">
+                            <rect key="frame" x="150" y="0.0" width="75" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_main_payment" translatesAutoresizingMaskIntoConstraints="NO" id="BPf-nP-PCE">
+                                    <rect key="frame" x="0.0" y="10" width="75" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="BPf-nP-PCE" secondAttribute="trailing" id="Gdn-DB-OnB"/>
+                                <constraint firstItem="BPf-nP-PCE" firstAttribute="leading" secondItem="uQz-Rp-s2p" secondAttribute="leading" id="Gq8-5A-HW0"/>
+                                <constraint firstItem="BPf-nP-PCE" firstAttribute="centerX" secondItem="uQz-Rp-s2p" secondAttribute="centerX" id="JmB-8U-FXv"/>
+                                <constraint firstAttribute="bottom" secondItem="BPf-nP-PCE" secondAttribute="bottom" constant="10" id="LRu-Cb-liC"/>
+                                <constraint firstItem="BPf-nP-PCE" firstAttribute="top" secondItem="uQz-Rp-s2p" secondAttribute="top" constant="10" id="fi8-3P-MOK"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnActionsWithSender:" destination="tX9-Xy-hKm" eventType="touchUpInside" id="xWG-rE-LWc"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-0b-3Lu" customClass="UIControl">
+                            <rect key="frame" x="225" y="0.0" width="75" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_main_apply" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-LK-Uwg">
+                                    <rect key="frame" x="0.0" y="10" width="75" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Ir5-LK-Uwg" firstAttribute="top" secondItem="gQu-0b-3Lu" secondAttribute="top" constant="10" id="Cx7-gR-ev1"/>
+                                <constraint firstAttribute="bottom" secondItem="Ir5-LK-Uwg" secondAttribute="bottom" constant="10" id="KSc-7R-fzQ"/>
+                                <constraint firstAttribute="trailing" secondItem="Ir5-LK-Uwg" secondAttribute="trailing" id="RCe-ZB-bwP"/>
+                                <constraint firstItem="Ir5-LK-Uwg" firstAttribute="leading" secondItem="gQu-0b-3Lu" secondAttribute="leading" id="TgW-nH-rDL"/>
+                                <constraint firstItem="Ir5-LK-Uwg" firstAttribute="centerX" secondItem="gQu-0b-3Lu" secondAttribute="centerX" id="w7V-iP-qgc"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnActionsWithSender:" destination="tX9-Xy-hKm" eventType="touchUpInside" id="Gsr-51-Y2l"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tv0-Pw-fPG" customClass="UIControl">
+                            <rect key="frame" x="300" y="0.0" width="75" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_main_calculate" translatesAutoresizingMaskIntoConstraints="NO" id="68c-Sa-V2P">
+                                    <rect key="frame" x="0.0" y="10" width="75" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="68c-Sa-V2P" secondAttribute="bottom" constant="10" id="6Ao-FS-oXQ"/>
+                                <constraint firstItem="68c-Sa-V2P" firstAttribute="centerX" secondItem="tv0-Pw-fPG" secondAttribute="centerX" id="V48-sw-Mm2"/>
+                                <constraint firstItem="68c-Sa-V2P" firstAttribute="leading" secondItem="tv0-Pw-fPG" secondAttribute="leading" id="hcu-kR-2t2"/>
+                                <constraint firstAttribute="trailing" secondItem="68c-Sa-V2P" secondAttribute="trailing" id="kOG-tk-81l"/>
+                                <constraint firstItem="68c-Sa-V2P" firstAttribute="top" secondItem="tv0-Pw-fPG" secondAttribute="top" constant="10" id="scx-k2-NXM"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnActionsWithSender:" destination="tX9-Xy-hKm" eventType="touchUpInside" id="ZMc-gg-Rs0"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="FfV-qf-tVr"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-sx-7La">
+                    <rect key="frame" x="0.0" y="80" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="lnl-1f-VRP"/>
+            <color key="backgroundColor" name="fdPrimaryBackground"/>
+            <constraints>
+                <constraint firstItem="I8b-sx-7La" firstAttribute="bottom" secondItem="tX9-Xy-hKm" secondAttribute="bottom" id="4gI-k4-T5Y"/>
+                <constraint firstItem="U55-DY-sbZ" firstAttribute="leading" secondItem="tX9-Xy-hKm" secondAttribute="leading" id="5yB-Jb-fGR"/>
+                <constraint firstItem="I8b-sx-7La" firstAttribute="top" secondItem="lnl-1f-VRP" secondAttribute="bottom" id="6Rc-Zy-b91"/>
+                <constraint firstAttribute="trailing" secondItem="U55-DY-sbZ" secondAttribute="trailing" id="UyM-Ef-u1u"/>
+                <constraint firstItem="U55-DY-sbZ" firstAttribute="width" secondItem="tX9-Xy-hKm" secondAttribute="width" id="drH-Ib-iFe"/>
+                <constraint firstAttribute="height" constant="80" id="oik-6W-5Ez"/>
+                <constraint firstItem="lnl-1f-VRP" firstAttribute="trailing" secondItem="I8b-sx-7La" secondAttribute="trailing" id="wOH-sF-XzO"/>
+                <constraint firstItem="U55-DY-sbZ" firstAttribute="top" secondItem="tX9-Xy-hKm" secondAttribute="top" id="xUR-Hq-zC9"/>
+                <constraint firstItem="I8b-sx-7La" firstAttribute="leading" secondItem="lnl-1f-VRP" secondAttribute="leading" id="xaB-KS-6al"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="controls" destination="FlZ-Jd-LFA" collectionClass="NSMutableArray" id="dvA-LT-jje"/>
+                <outletCollection property="controls" destination="EgL-dk-14G" collectionClass="NSMutableArray" id="kkl-ED-e14"/>
+                <outletCollection property="controls" destination="uQz-Rp-s2p" collectionClass="NSMutableArray" id="6PR-3J-cDa"/>
+                <outletCollection property="controls" destination="gQu-0b-3Lu" collectionClass="NSMutableArray" id="pLs-hU-JJL"/>
+                <outletCollection property="controls" destination="tv0-Pw-fPG" collectionClass="NSMutableArray" id="LC0-tq-emL"/>
+            </connections>
+            <point key="canvasLocation" x="-100" y="42"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_main_apply" width="120" height="180"/>
+        <image name="button_main_calculate" width="120" height="180"/>
+        <image name="button_main_payment" width="180" height="180"/>
+        <image name="button_main_staff" width="120" height="180"/>
+        <image name="button_main_store" width="120" height="180"/>
+        <namedColor name="fdPrimaryBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
