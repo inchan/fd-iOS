@@ -42,6 +42,7 @@ class FDBaseWebViewController: FDBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .systemBackground
         configuWebView(attatch: nil, completion: nil)
     }
 

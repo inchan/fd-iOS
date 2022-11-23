@@ -12,4 +12,15 @@ import Foundation
 struct AppPreferance {
     
     static var networkConfiguration: UserDefault<String> = UserDefault<String>(key: "networkConfiguration")
+    
+}
+
+struct LoginManager {
+    
+    static var storeDomain: UserDefault<String> = UserDefault<String>(key: "Login.StoreDomain")
+    static var accessToken: UserDefault<String> = UserDefault<String>(key: "Login.AccessToken")
+
+    static var isLogin: Bool {
+        return LoginManager.storeDomain.value?.count != 0 && LoginManager.accessToken.value?.count != 0
+    }
 }

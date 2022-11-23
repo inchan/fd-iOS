@@ -11,6 +11,7 @@
 		386D4AD2262690D000F2E598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABA8DA1243D6CC900F05EAA /* Main.storyboard */; };
 		387B14D0262E654000C94B14 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387B14CF262E653F00C94B14 /* NetworkConfiguration.swift */; };
 		387B14FE262E8DBB00C94B14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 387B14FD262E8DBB00C94B14 /* GoogleService-Info.plist */; };
+		3881D3E2292DA5FE007D1E64 /* FDQRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881D3E1292DA5FE007D1E64 /* FDQRCodeReaderView.swift */; };
 		3888628526E0991C00B7DE87 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888628426E0991C00B7DE87 /* AppTests.swift */; };
 		388CC6B6263121F40084E4EF /* HTTPCookieStorageExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CC6B5263121F40084E4EF /* HTTPCookieStorageExtention.swift */; };
 		388CC6C0263126D30084E4EF /* UserDefalut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CC6BF263126D30084E4EF /* UserDefalut.swift */; };
@@ -71,6 +72,7 @@
 		385BFAC12628048C00EA1F74 /* Flexday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flexday.entitlements; sourceTree = "<group>"; };
 		387B14CF262E653F00C94B14 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		387B14FD262E8DBB00C94B14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3881D3E1292DA5FE007D1E64 /* FDQRCodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDQRCodeReaderView.swift; sourceTree = "<group>"; };
 		3888628226E0991C00B7DE87 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3888628426E0991C00B7DE87 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		3888628626E0991C00B7DE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,14 +155,42 @@
 		38380115265351490024C624 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				6AF0B6C4292D2E3F000AA5C8 /* TabBar */,
-				38B3F7A4292C5B610090D3C6 /* Store */,
-				38B3F7A5292C5B7C0090D3C6 /* Staff */,
+				3881D3E0292DA4E6007D1E64 /* Store */,
+				3881D3DF292DA4DD007D1E64 /* Staff */,
 				38B3F7A6292C5BA40090D3C6 /* Payment */,
-				38B3F7A7292C5BAA0090D3C6 /* Apply */,
-				38B3F7A8292C5BE40090D3C6 /* Calculate */,
+				3881D3DD292DA4DD007D1E64 /* Apply */,
+				3881D3DE292DA4DD007D1E64 /* Calculate */,
+				6AF0B6C4292D2E3F000AA5C8 /* TabBar */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		3881D3DD292DA4DD007D1E64 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
+		3881D3DE292DA4DD007D1E64 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calculate;
+			sourceTree = "<group>";
+		};
+		3881D3DF292DA4DD007D1E64 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
+		3881D3E0292DA4E6007D1E64 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		3888628326E0991C00B7DE87 /* AppTests */ = {
@@ -172,42 +202,14 @@
 			path = AppTests;
 			sourceTree = "<group>";
 		};
-		38B3F7A4292C5B610090D3C6 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		38B3F7A5292C5B7C0090D3C6 /* Staff */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Staff;
-			sourceTree = "<group>";
-		};
 		38B3F7A6292C5BA40090D3C6 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				3881D3E1292DA5FE007D1E64 /* FDQRCodeReaderView.swift */,
 				38B3F79B292C58FA0090D3C6 /* FDQRCodeReaderViewController.swift */,
 				38B3F79D292C59100090D3C6 /* FDQRCodeInputViewController.swift */,
 			);
 			path = Payment;
-			sourceTree = "<group>";
-		};
-		38B3F7A7292C5BAA0090D3C6 /* Apply */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Apply;
-			path = "신청?";
-			sourceTree = "<group>";
-		};
-		38B3F7A8292C5BE40090D3C6 /* Calculate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Calculate;
 			sourceTree = "<group>";
 		};
 		38DDCED7262FBB7800D235B3 /* Utility */ = {
@@ -278,7 +280,6 @@
 				6ABA8D81243D4D8E00F05EAA /* Constants */,
 				6ACB35B7242CA74500A9436D /* Common */,
 				6ACB35B2242CA66900A9436D /* Services */,
-				6ACB35B1242CA62E00A9436D /* Model */,
 				6ACB35B0242CA60100A9436D /* Scene */,
 			);
 			path = App;
@@ -343,13 +344,6 @@
 				38380115265351490024C624 /* Main */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		6ACB35B1242CA62E00A9436D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6ACB35B2242CA66900A9436D /* Services */ = {
@@ -675,6 +669,7 @@
 				38B3F79E292C59100090D3C6 /* FDQRCodeInputViewController.swift in Sources */,
 				388CC6B6263121F40084E4EF /* HTTPCookieStorageExtention.swift in Sources */,
 				6ABA8D8A243D4E4D00F05EAA /* UILoadable.swift in Sources */,
+				3881D3E2292DA5FE007D1E64 /* FDQRCodeReaderView.swift in Sources */,
 				6AF0B6D7292D34EF000AA5C8 /* URLs.swift in Sources */,
 				6AE5EF6A24400ECA000BE9AD /* FinalizePrinter.swift in Sources */,
 				6A87D46B243C6864005BFD07 /* Constant.swift in Sources */,
@@ -890,10 +885,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "App/AppDelegate/Supporting files/Flexday.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 29;
-				DEVELOPMENT_TEAM = 4HU7LK844F;
+				DEVELOPMENT_TEAM = NE476725Q4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -904,9 +899,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.reebonz.app;
+				PRODUCT_BUNDLE_IDENTIFIER = flexday.store1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "reboonz app development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -920,10 +915,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "App/AppDelegate/Supporting files/Flexday.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 29;
-				DEVELOPMENT_TEAM = 4HU7LK844F;
+				DEVELOPMENT_TEAM = NE476725Q4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -934,9 +929,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.reebonz.app;
+				PRODUCT_BUNDLE_IDENTIFIER = flexday.store1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.reebonz.app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

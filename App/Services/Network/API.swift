@@ -11,16 +11,28 @@ import Alamofire
 
 struct API {
 
-    struct apps: APIRequestable {
+    struct QRCoded: APIRequestable {
         
         typealias ModelType = UserInfo
         
-        var url: String = "https://flexday.co.kr/apps"
+        var url: APIRequestURL = APIRequestURL(url: "https://dev-api.flexday.kr/stores")
         
         var parameters: [String : String]? = nil
         
         var header: HTTPHeaders? {
-            return HTTPHeaders()
+            var header = HTTPHeaders()
+            let accessToken = LoginManager.accessToken.value ?? ""
+            header["Authorization"] = "Bearer \(accessToken)"
+            return header
+        }
+        
+        var method: HTTPMethod {
+            return .post
+        }
+        
+        init (qrcode: String) {
+            let storeDomain = LoginManager.storeDomain.value ?? ""
+            url.paths.append(contentsOf: [storeDomain, "qrcode", "\(qrcode)"])
         }
     }
 }

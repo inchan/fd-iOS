@@ -117,7 +117,7 @@ class NetworkService: NSObject {
     }
 
     func request<R: APIRequestable>(_ reqeust: R, completion: R.ResultBlock? = nil) {
-        request(ofType: R.ModelType.self, method: reqeust.method, url: reqeust.url, parameters: reqeust.parameters, encoding:reqeust.encoding, header: reqeust.header, completion: completion)
+        request(ofType: R.ModelType.self, method: reqeust.method, url: reqeust.url.publishURL, parameters: reqeust.parameters, encoding:reqeust.encoding, header: reqeust.header, completion: completion)
     }
 
 }

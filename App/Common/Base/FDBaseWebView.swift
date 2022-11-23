@@ -49,6 +49,8 @@ class FDBaseWebView: WKWebView, FinalizePrinter {
         super.init(frame: frame, configuration: config)
         self.allowsLinkPreview = true
         self.allowsBackForwardNavigationGestures = true
+        self.backgroundColor = .systemBackground
+
     }
     
     required init?(coder: NSCoder) {
