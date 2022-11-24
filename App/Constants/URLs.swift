@@ -10,8 +10,8 @@ import Foundation
 
 struct URLs {
     
-    static let appStore: String = "https://itunes.apple.com/app/id\(Constant.Identifier.appId)?mt=8"
-    static let appStoreLoockup: String = "http://itunes.apple.com/lookup?id=\(Constant.Identifier.appId)"
+    static let appStore: String = "https://itunes.apple.com/app/id\(Constant.Identifier.AppStoreId)?mt=8"
+    static let appStoreLoockup: String = "http://itunes.apple.com/lookup?id=\(Constant.Identifier.AppStoreId)"
 }
 
 extension URLs {

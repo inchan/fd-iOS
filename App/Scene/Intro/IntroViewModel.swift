@@ -23,7 +23,7 @@ class IntroViewModel: HasDisposeBag {
     let state = BehaviorRelay<State>(value: .ready)
     let isLoading = PublishRelay<Bool>()
     
-    func runProcess(with configuration: NetworkConfiguration = .live) {
+    func runProcess(with configuration: ServerConfiguration = .live) {
         setServer(configuration)
         isLoading.accept(true)
         finish()
@@ -38,9 +38,9 @@ class IntroViewModel: HasDisposeBag {
 extension IntroViewModel {
 
     /// DEBUG
-    func setServer(_ configuration: NetworkConfiguration) {
-        AppPreferance.networkConfiguration.value = configuration.rawValue
-        NetworkService.configuration = configuration
+    func setServer(_ configuration: ServerConfiguration) {
+        AppPreferance.ServerConfiguration.value = configuration.rawValue
+        NetworkService.server = configuration
     }
 
 }

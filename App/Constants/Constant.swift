@@ -11,12 +11,12 @@ import Foundation
 struct Constant {
     
     struct Identifier {
-        static let appId = "U24BE83NSS7R"
-        static let userAgnet = "APP_flexday_IOS"
+        static let AppStoreId = "U24BE83NSS7R"
+        static let UserAgnet = "flexday-ios-app"
     }
     
     struct Key {
-
+        static let WebAppBridgeHandlerKey = "fdcallbackhandler"
     }
 }
 

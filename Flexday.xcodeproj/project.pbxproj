@@ -217,6 +217,14 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
+		38C456C1292F1D82001C6856 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				38C456BF292F10A7001C6856 /* sampleBridge.html */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		38DDCED7262FBB7800D235B3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				6AE4F3E924A2E84F009B6C98 /* README.md */,
-				38C456BF292F10A7001C6856 /* sampleBridge.html */,
 				6ACB3595242CA32100A9436D /* App */,
 				3888628326E0991C00B7DE87 /* AppTests */,
 				6ACB3594242CA32100A9436D /* Products */,
@@ -313,6 +320,7 @@
 		6ACB35AC242CA4E400A9436D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				38C456C1292F1D82001C6856 /* Sample */,
 				6ACB35AE242CA4FD00A9436D /* Storybiard */,
 				6ACB359F242CA32400A9436D /* Assets.xcassets */,
 			);

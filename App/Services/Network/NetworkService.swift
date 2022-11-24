@@ -80,7 +80,7 @@ struct APIErrorResponse {
 class NetworkService: NSObject {
     
     static let shared = NetworkService()
-    static var configuration: NetworkConfiguration? = nil;
+    static var server: ServerConfiguration? = nil;
 
     let isDebug = true
     

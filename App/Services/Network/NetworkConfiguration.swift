@@ -16,23 +16,22 @@ struct NetworkServer {
     
     struct Web {
         static let live = "https://flex.day"
-        static let dev = "https://flex.day"
+        static let dev = "https://dev-store.flex.day"
     }
 }
 
-
-enum NetworkConfiguration: String, CaseIterable {
+enum ServerConfiguration: String, CaseIterable {
     case live
     case dev
     
-    var baseWebDomain: String {
+    var webHost: String {
         switch self {
         case .dev: return NetworkServer.Web.dev
         default: return NetworkServer.Web.live
         }
     }
     
-    var baseApiDomain: String {
+    var apiHost: String {
         switch self {
         case .dev: return NetworkServer.API.dev
         default: return NetworkServer.API.live

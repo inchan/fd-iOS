@@ -40,8 +40,8 @@ class IntroViewController: FDBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if isFristAppeared {
-            if let networkConfiguration = AppPreferance.networkConfiguration.value {
-                let configuration = NetworkConfiguration(rawValue: networkConfiguration) ?? .live
+            if let ServerConfiguration = AppPreferance.ServerConfiguration.value {
+                let configuration = ServerConfiguration(rawValue: ServerConfiguration) ?? .live
                 self.viewModel.runProcess(with: configuration)
             }
             else {
@@ -93,16 +93,16 @@ class IntroViewController: FDBaseViewController {
     
     //MARK: Logic
     
-    func chooseServer(completion: @escaping (NetworkConfiguration) -> Void) {
+    func chooseServer(completion: @escaping (ServerConfiguration) -> Void) {
         
         if NetworkService.configuration == nil {
-            let buttonTitles = NetworkConfiguration.allCases
+            let buttonTitles = ServerConfiguration.allCases
                 .map({ $0.rawValue })
                 .compactMap({ $0 })
 
             showAlert(title: "DEBUG", message: "서버를 선택해 주세요.", buttonTitles: buttonTitles) { (index) in
                 let title = buttonTitles[index]
-                let configuration = NetworkConfiguration(rawValue: title) ?? .live
+                let configuration = ServerConfiguration(rawValue: title) ?? .live
                 completion(configuration)
             }
         }
