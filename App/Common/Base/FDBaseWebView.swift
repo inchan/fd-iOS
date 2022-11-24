@@ -36,16 +36,15 @@ class FDBaseWebView: WKWebView, FinalizePrinter {
         return config
     }
     
-    init(frame: CGRect, configuration: WKWebViewConfiguration? = nil, scriptMessage: ScriptMessage? = nil) {
+    init(frame: CGRect, configuration: WKWebViewConfiguration? = nil, scriptMessages: [ScriptMessage]? = nil) {
         let config = configuration ?? FDBaseWebView.commonConfig
-        config.userContentController = {
-            let userContentController = WKUserContentController()
-            if let scriptMessage = scriptMessage, let handler = scriptMessage.handler {
+        let userContentController = config.userContentController
+        scriptMessages?.forEach({ scriptMessage in
+            if let handler = scriptMessage.handler {
                 userContentController.add(handler, name: scriptMessage.name)
             }
-            return userContentController
-        }()
-        
+        })
+
         super.init(frame: frame, configuration: config)
         self.allowsLinkPreview = true
         self.allowsBackForwardNavigationGestures = true
@@ -81,7 +80,7 @@ class FDBaseWebView: WKWebView, FinalizePrinter {
             evaluateJavaScript("navigator.userAgent", completionHandler: { [weak self] (userAgent, error) in
                 guard let strongSelf = self else { completion(""); return }
                 guard let userAgent = userAgent as? String else { completion(""); return }
-                strongSelf.defaultUserAgent = userAgent
+                strongSelf.defaultUserAgent = userAgent + " flexday-ios-app"
                 completion(userAgent)
             })
         }

@@ -22,7 +22,7 @@ extension URLs {
         var url: String {
             switch self {
             case .store: return "https://flex.day"
-            case .staff: return "https://google.com"
+            case .staff: return "https://dev-store.flex.day/store/login"
             case .apply: return "https://amazon.com"
             case .calculate: return "https://github.com"
             default: return "brank"

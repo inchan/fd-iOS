@@ -19,7 +19,7 @@ class FDBaseWebViewController: FDBaseViewController {
     }()
         
     lazy var webView: FDBaseWebView = {
-        return FDBaseWebView(frame: CGRect.zero, scriptMessage: ScriptMessage(handler: self, name: "callbackHandler"))
+        return FDBaseWebView(frame: CGRect.zero, scriptMessages: [ScriptMessage(handler:self, name: "flexdayaos")])
     }()
     
     
@@ -43,7 +43,9 @@ class FDBaseWebViewController: FDBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        configuWebView(attatch: nil, completion: nil)
+        configuWebView(attatch: nil) {
+            self.webView.configuration.userContentController.add(self, name: "flexdayaos")
+        }
     }
 
     func configuWebView(attatch target: UIView? = nil, completion: (() -> Void)? = nil) {
