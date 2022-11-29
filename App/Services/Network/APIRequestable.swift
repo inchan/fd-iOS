@@ -1,5 +1,5 @@
 //
-//  APIRequestable.swift
+//  FDRequestable.swift
 //  flexday
 //
 //  Created by inchan on 14/04/2021.
@@ -16,11 +16,13 @@ struct APIRequestURL {
     
     var publishURL: URL {
         if var components = URLComponents(string: url) {
+            var paths: [String] = components.path.count > 0 ? [components.path] : []
+            paths.append(contentsOf: self.paths)
             components.path = paths.joined(separator: "/")
             var queryItems = components.queryItems ?? []
             let newQueryItems = querys.map({ URLQueryItem(name: $0.key, value: $0.value) })
             queryItems.append(contentsOf: newQueryItems)
-            components.queryItems = queryItems
+            components.queryItems = queryItems.count > 0 ? queryItems : nil
             if let url = components.url {
                 return url
             }
@@ -29,7 +31,7 @@ struct APIRequestURL {
     }
 }
 
-protocol APIRequestable {
+protocol FDRequestable {
 
     associatedtype ModelType: Codable
     typealias ResultType = Result<ModelType, APIError>
@@ -47,7 +49,7 @@ protocol APIRequestable {
 }
 
 // defalut set
-extension APIRequestable {
+extension FDRequestable {
     
     var path: [String] {
         return []

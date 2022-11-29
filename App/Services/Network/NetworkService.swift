@@ -116,7 +116,7 @@ class NetworkService: NSObject {
             .disposed(by: rx.disposeBag)
     }
 
-    func request<R: APIRequestable>(_ reqeust: R, completion: R.ResultBlock? = nil) {
+    func request<R: FDRequestable>(_ reqeust: R, completion: R.ResultBlock? = nil) {
         request(ofType: R.ModelType.self, method: reqeust.method, url: reqeust.url.publishURL, parameters: reqeust.parameters, encoding:reqeust.encoding, header: reqeust.header, completion: completion)
     }
 

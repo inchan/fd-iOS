@@ -11,14 +11,14 @@ import Foundation
 
 struct AppPreferance {
     
-    static var ServerConfiguration: UserDefault<String> = UserDefault<String>(key: "ServerConfiguration")
+    static var ServerConfiguration = UserDefault<String>(key: "ServerConfiguration")
     
 }
 
 struct LoginManager {
     
-    static var StoreDomain: UserDefault<String> = UserDefault<String>(key: "Login.StoreDomain")
-    static var AccessToken: UserDefault<String> = UserDefault<String>(key: "Login.AccessToken")
+    static var StoreDomain = UserDefault<String>(key: "Login.StoreDomain")
+    static var AccessToken = UserDefault<String>(key: "Login.AccessToken")
 
     static var isLogin: Bool {
         return LoginManager.StoreDomain.value?.count != 0 && LoginManager.AccessToken.value?.count != 0

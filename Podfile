@@ -15,6 +15,7 @@ def pods
     
     # UI
     pod 'SDWebImage', '~> 4.x'
+    pod 'Toaster'
     
     # Extensions
     pod 'SwifterSwift'    

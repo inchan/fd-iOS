@@ -117,7 +117,7 @@ class FDTabBarController: UITabBarController, FinalizePrinter, FDBackaButtonBuil
         }
         
         if (tag == 2) {
-            if let vc = FDQRCodeReaderViewController.loadFromStoryboard() {
+            if let vc = QRCodeReaderViewController.loadFromStoryboard() {
                 self.present(vc, animated: true, completion: nil)
             }
         }

@@ -10,18 +10,18 @@ import Foundation
 import Alamofire
 
 struct API {
-
-    struct QRCoded: APIRequestable {
+    
+    struct ProcessQRCode: FDRequestable {
         
         typealias ModelType = UserInfo
         
-        var url: APIRequestURL = APIRequestURL(url: "https://dev-api.flexday.kr/stores")
+        var url: APIRequestURL = APIRequestURL(url: NetworkService.server!.apiHost)
         
         var parameters: [String : String]? = nil
         
         var header: HTTPHeaders? {
             var header = HTTPHeaders()
-            let accessToken = LoginManager.accessToken.value ?? ""
+            let accessToken = LoginManager.AccessToken.value ?? ""
             header["Authorization"] = "Bearer \(accessToken)"
             return header
         }
@@ -31,8 +31,8 @@ struct API {
         }
         
         init (qrcode: String) {
-            let storeDomain = LoginManager.storeDomain.value ?? ""
-            url.paths.append(contentsOf: [storeDomain, "qrcode", "\(qrcode)"])
+            let storeDomain = LoginManager.StoreDomain.value ?? ""
+            url.paths.append(contentsOf: [storeDomain, "mobile-qrcode", "\(qrcode)"])
         }
     }
 }

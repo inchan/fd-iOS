@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dfi-rW-dt4">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sCu-Gc-2NG" kind="relationship" relationship="rootViewController" id="6hT-SK-Xf1"/>
+                        <segue destination="1lW-OK-xkB" kind="relationship" relationship="rootViewController" id="tMZ-2J-aNT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJk-II-Jzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
         <!--스토어-->
         <scene sceneID="9MX-5P-gGV">
             <objects>
-                <viewController id="1lW-OK-xkB" customClass="FDBaseWebViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1lW-OK-xkB" customClass="MainViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yg-mc-jmM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,7 @@
                     <tabBarItem key="tabBarItem" title="스토어" id="v67-ex-PJs">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="w9h-p3-yaV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kz1-Hk-Y1Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,7 +293,7 @@
         <!--Code Reader View Controller-->
         <scene sceneID="1j0-Uw-mPB">
             <objects>
-                <viewController storyboardIdentifier="FDQRCodeReaderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugy-sS-WqX" customClass="FDQRCodeReaderViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeReaderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugy-sS-WqX" customClass="QRCodeReaderViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYu-9U-MZU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,24 +304,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ct-7k-js6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmk-sj-4ec" customClass="FDQRCodeReaderView" customModule="App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="487"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-XM-QHW" customClass="QRCodeReaderView" customModule="App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-lG-ssv">
-                                                <rect key="frame" x="30" y="20" width="30" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="1uY-Sp-aco"/>
-                                                </constraints>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="close"/>
-                                                <connections>
-                                                    <action selector="onBack:" destination="ugy-sS-WqX" eventType="touchUpInside" id="cpv-Pg-9oF"/>
-                                                </connections>
-                                            </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_grid_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="D1C-tW-EF1">
-                                                <rect key="frame" x="30" y="80" width="35" height="35"/>
+                                                <rect key="frame" x="30" y="60" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="BGl-D1-aJn"/>
                                                     <constraint firstAttribute="width" constant="35" id="Kuz-Ex-ZVH"/>
@@ -334,7 +323,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_grid_pic2" translatesAutoresizingMaskIntoConstraints="NO" id="SyH-07-WSk">
-                                                <rect key="frame" x="310" y="100" width="35" height="35"/>
+                                                <rect key="frame" x="310" y="60" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="EsN-iN-iKR"/>
                                                     <constraint firstAttribute="height" constant="35" id="Htn-pY-vb7"/>
@@ -350,17 +339,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="zn2-lG-ssv" firstAttribute="top" secondItem="4Ct-7k-js6" secondAttribute="top" constant="20" id="3FJ-Np-5RW"/>
                                             <constraint firstAttribute="bottom" secondItem="B1g-MV-Qba" secondAttribute="bottom" constant="60" id="Aur-9C-xcm"/>
-                                            <constraint firstItem="D1C-tW-EF1" firstAttribute="top" secondItem="zn2-lG-ssv" secondAttribute="bottom" constant="20" id="FwV-bb-gms"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zn2-lG-ssv" secondAttribute="trailing" constant="20" symbolic="YES" id="Gjv-UH-hZZ"/>
-                                            <constraint firstItem="SyH-07-WSk" firstAttribute="top" secondItem="4Ct-7k-js6" secondAttribute="top" constant="100" id="IoE-b4-e18"/>
+                                            <constraint firstItem="SyH-07-WSk" firstAttribute="top" secondItem="D1C-tW-EF1" secondAttribute="top" id="IoE-b4-e18"/>
                                             <constraint firstAttribute="bottom" secondItem="wfZ-iF-tfD" secondAttribute="bottom" constant="60" id="JFa-xT-485"/>
-                                            <constraint firstItem="zn2-lG-ssv" firstAttribute="leading" secondItem="4Ct-7k-js6" secondAttribute="leading" constant="30" id="Owy-b6-PEr"/>
+                                            <constraint firstAttribute="bottom" secondItem="Idh-XM-QHW" secondAttribute="bottom" id="Jh0-0T-dsd"/>
                                             <constraint firstAttribute="trailing" secondItem="SyH-07-WSk" secondAttribute="trailing" constant="30" id="Y4w-e8-doq"/>
                                             <constraint firstAttribute="trailing" secondItem="B1g-MV-Qba" secondAttribute="trailing" constant="30" id="cQx-Mq-sze"/>
+                                            <constraint firstItem="D1C-tW-EF1" firstAttribute="top" secondItem="4Ct-7k-js6" secondAttribute="top" constant="60" id="dJv-fb-nsh"/>
+                                            <constraint firstItem="Idh-XM-QHW" firstAttribute="leading" secondItem="4Ct-7k-js6" secondAttribute="leading" id="g7S-0t-wbx"/>
+                                            <constraint firstItem="Idh-XM-QHW" firstAttribute="top" secondItem="4Ct-7k-js6" secondAttribute="top" id="kec-EQ-ELl"/>
                                             <constraint firstItem="wfZ-iF-tfD" firstAttribute="leading" secondItem="4Ct-7k-js6" secondAttribute="leading" constant="30" id="kyJ-Af-4KS"/>
                                             <constraint firstItem="D1C-tW-EF1" firstAttribute="leading" secondItem="4Ct-7k-js6" secondAttribute="leading" constant="30" id="vB9-ya-ju2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Idh-XM-QHW" secondAttribute="trailing" id="zeq-YW-Yjt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7u-LB-715">
@@ -372,16 +362,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-gv-1wA">
                                                         <rect key="frame" x="10" y="8.5" width="229" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12자리 번호를 입력하세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R12-hW-73Q">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="12자리 번호를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4e-ft-KIt">
                                                                 <rect key="frame" x="15" y="0.0" width="214" height="55"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12자리 번호를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4e-ft-KIt">
-                                                                <rect key="frame" x="15" y="0.0" width="214" height="55"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="ugy-sS-WqX" id="1Ic-1M-lPk"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -389,10 +377,6 @@
                                                             <constraint firstItem="K4e-ft-KIt" firstAttribute="top" secondItem="0r8-gv-1wA" secondAttribute="top" id="4YD-XK-ySB"/>
                                                             <constraint firstAttribute="height" constant="55" id="Hgv-MA-GoP"/>
                                                             <constraint firstAttribute="bottom" secondItem="K4e-ft-KIt" secondAttribute="bottom" id="KVV-f2-Kch"/>
-                                                            <constraint firstItem="R12-hW-73Q" firstAttribute="leading" secondItem="0r8-gv-1wA" secondAttribute="leading" constant="15" id="S5f-Ke-t0Y"/>
-                                                            <constraint firstAttribute="trailing" secondItem="R12-hW-73Q" secondAttribute="trailing" id="WJM-Wu-lpy"/>
-                                                            <constraint firstItem="R12-hW-73Q" firstAttribute="top" secondItem="0r8-gv-1wA" secondAttribute="top" id="cSU-uT-5Ic"/>
-                                                            <constraint firstAttribute="bottom" secondItem="R12-hW-73Q" secondAttribute="bottom" id="epd-yY-QJY"/>
                                                             <constraint firstItem="K4e-ft-KIt" firstAttribute="leading" secondItem="0r8-gv-1wA" secondAttribute="leading" constant="15" id="f4L-tz-snB"/>
                                                             <constraint firstAttribute="trailing" secondItem="K4e-ft-KIt" secondAttribute="trailing" id="o4S-cK-YJR"/>
                                                         </constraints>
@@ -400,16 +384,21 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1T-jc-pQm">
                                                         <rect key="frame" x="244" y="8.5" width="91" height="55"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNu-Er-7H0">
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNu-Er-7H0">
                                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="55"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQz-Cz-6DN">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQz-Cz-6DN">
                                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="55"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="입력하기">
+                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="onSendInputCode:" destination="ugy-sS-WqX" eventType="touchUpInside" id="RUS-cD-yPA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,7 +432,6 @@
                                                     <constraint firstAttribute="height" constant="36" id="06i-tk-oJJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -459,6 +447,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="H7u-LB-715" firstAttribute="top" secondItem="4Ct-7k-js6" secondAttribute="bottom" id="3Hh-tr-Ipx"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ct-7k-js6" secondAttribute="trailing" id="Fmj-rl-dhC"/>
+                                    <constraint firstItem="4Ct-7k-js6" firstAttribute="leading" secondItem="mbr-A6-TO4" secondAttribute="leading" id="GXn-CL-Fo1"/>
+                                    <constraint firstItem="4Ct-7k-js6" firstAttribute="top" secondItem="mbr-A6-TO4" secondAttribute="top" id="VGK-A8-J2Z"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0yD-bo-zmw"/>
@@ -471,21 +466,22 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="zn2-lG-ssv" id="Sn0-Zv-KvR"/>
+                        <outlet property="inputBackgroundView" destination="0r8-gv-1wA" id="oYb-wi-hFi"/>
                         <outlet property="inputButton" destination="zQz-Cz-6DN" id="tUc-TQ-wik"/>
                         <outlet property="inputContentsView" destination="H7u-LB-715" id="FI3-8x-2eC"/>
                         <outlet property="inputTextField" destination="K4e-ft-KIt" id="v77-2L-7h0"/>
-                        <outlet property="readerView" destination="Gmk-sj-4ec" id="hP1-M6-7Tz"/>
+                        <outlet property="qrcodeReaderView" destination="Idh-XM-QHW" id="HKJ-Mx-EuL"/>
+                        <outlet property="stackViewBottom" destination="AZt-0c-gIp" id="FB6-q4-FRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXS-Rr-Ik1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="1426"/>
+            <point key="canvasLocation" x="-1418" y="1370"/>
         </scene>
         <!--Code Input View Controller-->
         <scene sceneID="Tbk-f6-x4W">
             <objects>
-                <viewController storyboardIdentifier="FDQRCodeInputViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZS-YN-M6b" customClass="FDQRCodeInputViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeInputViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZS-YN-M6b" customClass="QRCodeInputViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFe-Z2-Cgd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -593,17 +589,22 @@
             <point key="canvasLocation" x="-972" y="2218"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tMZ-2J-aNT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="button_main_apply" width="120" height="180"/>
         <image name="button_main_calculate" width="120" height="180"/>
         <image name="button_main_payment" width="180" height="180"/>
         <image name="button_main_staff" width="120" height="180"/>
         <image name="button_main_store" width="120" height="180"/>
-        <image name="close" width="30" height="55"/>
         <image name="img_grid_pic1" width="70" height="70"/>
         <image name="img_grid_pic2" width="70" height="70"/>
         <image name="img_grid_pic3" width="70" height="70"/>
         <image name="img_grid_pic4" width="70" height="70"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

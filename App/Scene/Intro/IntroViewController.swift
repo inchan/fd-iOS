@@ -40,8 +40,8 @@ class IntroViewController: FDBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if isFristAppeared {
-            if let ServerConfiguration = AppPreferance.ServerConfiguration.value {
-                let configuration = ServerConfiguration(rawValue: ServerConfiguration) ?? .live
+            if let serverConfiguration: String = AppPreferance.ServerConfiguration.value {
+                let configuration = ServerConfiguration(rawValue: serverConfiguration) ?? .live
                 self.viewModel.runProcess(with: configuration)
             }
             else {
@@ -95,7 +95,7 @@ class IntroViewController: FDBaseViewController {
     
     func chooseServer(completion: @escaping (ServerConfiguration) -> Void) {
         
-        if NetworkService.configuration == nil {
+        if NetworkService.server == nil {
             let buttonTitles = ServerConfiguration.allCases
                 .map({ $0.rawValue })
                 .compactMap({ $0 })

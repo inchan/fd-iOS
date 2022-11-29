@@ -19,9 +19,8 @@ class FDBaseWebViewController: FDBaseViewController {
     }()
         
     lazy var webView: FDBaseWebView = {
-        return FDBaseWebView(frame: CGRect.zero, scriptMessages: [ScriptMessage(handler:self, name: "flexdayaos")])
+        return FDBaseWebView(frame: CGRect.zero, scriptMessages: [ScriptMessage(handler:self, name: "fdcallbackhandler")])
     }()
-    
     
     var homeUrl: String? {
         didSet {
@@ -44,7 +43,7 @@ class FDBaseWebViewController: FDBaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         configuWebView(attatch: nil) {
-            self.webView.configuration.userContentController.add(self, name: "flexdayaos")
+            self.webView.configuration.userContentController.add(self, name: "fdcallbackhandler")
         }
     }
 
@@ -67,6 +66,8 @@ class FDBaseWebViewController: FDBaseViewController {
         }
         progressView.bind(to: webView, by: rx.disposeBag)
     }
+    
+    
 }
 
 extension FDBaseWebViewController {
@@ -134,7 +135,6 @@ extension FDBaseWebViewController {
 extension FDBaseWebViewController: WKScriptMessageHandler {
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
         callBackHandler?(message)
     }
 

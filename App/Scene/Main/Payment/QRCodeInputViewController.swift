@@ -8,6 +8,6 @@
 
 import UIKit
 
-class FDQRCodeInputViewController: FDBaseViewController {
+class QRCodeInputViewController: FDBaseViewController {
     
 }

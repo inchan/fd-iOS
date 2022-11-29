@@ -20,11 +20,16 @@ extension URLs {
         case store, staff, payment, apply, calculate
         
         var url: String {
+            
+            guard let baseURL = NetworkService.server?.webHost.url?.absoluteString else {
+                return ""
+            }
+            
             switch self {
-            case .store: return "https://flex.day"
-            case .staff: return "https://dev-store.flex.day/store/login"
-            case .apply: return "https://amazon.com"
-            case .calculate: return "https://github.com"
+            case .store: return baseURL
+            case .staff: return baseURL + "/store/login"
+            case .apply: return baseURL
+            case .calculate: return baseURL + "/store/calculator"
             default: return "brank"
             }
         }
