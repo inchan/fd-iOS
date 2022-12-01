@@ -80,7 +80,7 @@ class FDBaseWebView: WKWebView, FinalizePrinter {
             evaluateJavaScript("navigator.userAgent", completionHandler: { [weak self] (userAgent, error) in
                 guard let strongSelf = self else { completion(""); return }
                 guard let userAgent = userAgent as? String else { completion(""); return }
-                strongSelf.defaultUserAgent = userAgent + " " + Constant.Identifier.UserAgnet
+                strongSelf.defaultUserAgent = userAgent
                 completion(userAgent)
             })
         }

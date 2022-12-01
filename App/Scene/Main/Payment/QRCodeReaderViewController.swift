@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
-
-
+import Toaster
 
 class QRCodeReaderViewController: FDBaseViewController {
     
@@ -23,6 +21,9 @@ class QRCodeReaderViewController: FDBaseViewController {
     @IBOutlet weak var inputButton: UIButton!
     
     @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
+    
+    
+    var didReceived: ((String) -> Void)? = nil
 
     
     // MARK - Lifecycle
@@ -40,8 +41,6 @@ class QRCodeReaderViewController: FDBaseViewController {
         if !qrcodeReaderView.isRunning {
             qrcodeReaderView.start()
         }
-        
-        requestQRcode("642533508882")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,19 +86,46 @@ class QRCodeReaderViewController: FDBaseViewController {
     }
     
     @IBAction func onSendInputCode(_ sender: UIButton?) {
-        requestQRcode(inputTextField.text ?? "")
-        inputTextField.text = ""
-        resignFirstResponder()
+        func clear() {
+            inputTextField.text = ""
+            resignFirstResponder()
+        }
+        
+        guard let text = inputTextField.text else {
+            clear()
+            return
+        }
+        requestQRcode(text)
+        clear()
     }
 
     func requestQRcode(_ qrcode: String) {
         guard qrcode.count > 0 else { return }
-        API.ProcessQRCode(qrcode: qrcode).request { response in
-            print("response: \(response)")
-            
-            //self.webView?.evaluateJavaScript("dispatchEvent('asdf');")
+        API.GetQRCode(qrcode: qrcode).request { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let coupon):
+                strongSelf.sendToWeb(coupon: coupon)
+                break
+            case .failure(let error):
+                if let data = error.errorResponse?.data, let stringValue = data.string(encoding: .utf8) {
+                    strongSelf.sendToWeb(received: stringValue)
+                }
+                break
+            }
         }
     }
+    
+    func sendToWeb(coupon: Coupon) {
+        if let jsonString = coupon.asJsonString {
+            didReceived?(jsonString)
+        }
+    }
+    
+    func sendToWeb(received: String) {
+        didReceived?(received)
+    }
+
 }
 
 extension QRCodeReaderViewController: QRCodeReaderViewDelegate {

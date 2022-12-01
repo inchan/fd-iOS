@@ -20,18 +20,18 @@ struct NetworkServer {
     }
 }
 
-enum ServerConfiguration: String, CaseIterable {
+enum ServerHost: String, CaseIterable {
     case live
     case dev
     
-    var webHost: String {
+    var web: String {
         switch self {
         case .dev: return NetworkServer.Web.dev
         default: return NetworkServer.Web.live
         }
     }
     
-    var apiHost: String {
+    var api: String {
         switch self {
         case .dev: return NetworkServer.API.dev
         default: return NetworkServer.API.live

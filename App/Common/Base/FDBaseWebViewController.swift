@@ -19,7 +19,7 @@ class FDBaseWebViewController: FDBaseViewController {
     }()
         
     lazy var webView: FDBaseWebView = {
-        return FDBaseWebView(frame: CGRect.zero, scriptMessages: [ScriptMessage(handler:self, name: "fdcallbackhandler")])
+        return FDBaseWebView(frame: CGRect.zero, scriptMessages: [ScriptMessage(handler:self, name: Constant.Key.WebAppBridgeHandlerKey)])
     }()
     
     var homeUrl: String? {
@@ -43,7 +43,7 @@ class FDBaseWebViewController: FDBaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         configuWebView(attatch: nil) {
-            self.webView.configuration.userContentController.add(self, name: "fdcallbackhandler")
+            self.webView.configuration.userContentController.add(self, name: Constant.Key.WebAppBridgeHandlerKey)
         }
     }
 

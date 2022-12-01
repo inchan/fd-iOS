@@ -21,7 +21,7 @@ extension URLs {
         
         var url: String {
             
-            guard let baseURL = NetworkService.server?.webHost.url?.absoluteString else {
+            guard let baseURL = NetworkService.server?.web.url?.absoluteString else {
                 return ""
             }
             

@@ -11,7 +11,7 @@ import Foundation
 
 struct AppPreferance {
     
-    static var ServerConfiguration = UserDefault<String>(key: "ServerConfiguration")
+    static var ServerHost = UserDefault<String>(key: "ServerHost")
     
 }
 

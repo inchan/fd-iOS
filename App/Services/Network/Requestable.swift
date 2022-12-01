@@ -1,5 +1,5 @@
 //
-//  FDRequestable.swift
+//  Requestable.swift
 //  flexday
 //
 //  Created by inchan on 14/04/2021.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct APIRequestURL {
+struct RequestURL {
     var url: String
     var paths: [String] = []
     var querys: [String: String] = [:]
@@ -18,7 +18,11 @@ struct APIRequestURL {
         if var components = URLComponents(string: url) {
             var paths: [String] = components.path.count > 0 ? [components.path] : []
             paths.append(contentsOf: self.paths)
-            components.path = paths.joined(separator: "/")
+            var newPath = paths.joined(separator: "/")
+            if newPath.hasPrefix("/") == false {
+                newPath.insert("/", at: newPath.startIndex)
+            }
+            components.path = newPath
             var queryItems = components.queryItems ?? []
             let newQueryItems = querys.map({ URLQueryItem(name: $0.key, value: $0.value) })
             queryItems.append(contentsOf: newQueryItems)
@@ -31,13 +35,13 @@ struct APIRequestURL {
     }
 }
 
-protocol FDRequestable {
+protocol Requestable {
 
     associatedtype ModelType: Codable
     typealias ResultType = Result<ModelType, APIError>
     typealias ResultBlock = (ResultType) -> Void
 
-    var url: APIRequestURL { get }
+    var url: RequestURL { get }
     var parameters: [String: String]? { get set }
     var method: HTTPMethod { get }
     var encoding: ParameterEncoding { get }
@@ -49,22 +53,14 @@ protocol FDRequestable {
 }
 
 // defalut set
-extension FDRequestable {
-    
-    var path: [String] {
-        return []
-    }
-
-    var querys: [String: String] {
-        return [:]
-    }
-    
+extension Requestable {
+        
     var method: HTTPMethod {
         return .get
     }
 
     var parameters: [String: String]? {
-        return nil
+        return [:]
     }
     
     var encoding: ParameterEncoding {

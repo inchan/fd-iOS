@@ -5,24 +5,33 @@
 <script type="text/javascript">
    // alert(1)
    
-    function callNative01() {
+    function openQRCodeReader() {
        try {
-           webkit.messageHandlers.callbackHandler.postMessage("testValue");
+           webkit.messageHandlers.fdcallbackhandler.postMessage('openQRCodeReader');
+       } catch(error) {
+           alert(error)
+       }
+    }
+    
+    function closeQRCodeReader() {
+       try {
+           webkit.messageHandlers.fdcallbackhandler.postMessage('closeQRCodeReader');
        } catch(error) {
            alert(error)
        }
     }
 
-    function callNative02() {
+
+    function sendMapData() {
         try {
-            webkit.messageHandlers.callbackHandler.postMessage({key01:'testValue01', key02:'testValue02'});
+            webkit.messageHandlers.fdcallbackhandler.postMessage({'key01':'value01', 'key02':'value02'});
         } catch(error) {
             alert(error)
         }
     }
    
     function test01() {
-       alert('test01');
+       alert('navigation.user-agent');
     }
 
     function testCallBack(message) {
@@ -30,9 +39,9 @@
     }
 </script>
 <body>
-    <h1> <a href="javascript:test01();">Test Click</a> </h1> <br /><br />
-    <h1> <a href="javascript:callNative01();">CallNative 01 Click</a> </h1> <br /><br />
-    <h1> <a href="javascript:callNative02();">CallNative 02 Click</a> </h1> <br /><br />
+    <h1> <a href="javascript:openQRCodeReader();">open QRCodeReader</a> </h1> <br /><br />
+    <h1> <a href="javascript:closeQRCodeReader();">close QRCodeReader</a> </h1> <br /><br />
+    <h1> <a href="javascript:sendMapData();">send MapData</a> </h1> <br /><br />
 <h1> This is a sample file created to test a simple "WebView".<br /></h1>
 <h1> Modify this file to test the "WebView" content.<br /></h1>
 </body>
